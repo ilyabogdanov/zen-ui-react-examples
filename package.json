@@ -14,8 +14,8 @@
     "start": "webpack-dev-server --port 8090 --historyApiFallback"
   },
   "dependencies": {
-    "zen-ui-core": "0.1.0",
-    "zen-ui-react": "0.1.0",
+    "zen-ui-core": "0.1.1",
+    "zen-ui-react": "0.1.1",
     "@types/react": "^16.0.2",
     "classnames": "^2.2.5",
     "react": "^15.6.1",
