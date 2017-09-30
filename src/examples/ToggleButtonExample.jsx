@@ -14,10 +14,13 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class ToggleButtonExample extends React.Component {
     constructor(props) {
+        // noinspection JSCheckFunctionSignatures
         super(props);
         this.onChange = {};
         this.onChange[App_Props.TOGGLE_BUTTON_1] = this.handleChange.bind(this, App_Props.TOGGLE_BUTTON_1);
@@ -39,36 +42,36 @@ export default class ToggleButtonExample extends React.Component {
     render() {
         const me = this;
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Normal:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <ToggleButton init={this.props.appState[App_Props.TOGGLE_BUTTON_1]} palette={Button_Props.palette.ORDINARY} onChange={this.onChange[App_Props.TOGGLE_BUTTON_1]}>Ordinary</ToggleButton>
                         <ToggleButton init={this.props.appState[App_Props.TOGGLE_BUTTON_2]} palette={Button_Props.palette.BRANDED} onChange={this.onChange[App_Props.TOGGLE_BUTTON_2]}>Branded</ToggleButton>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Disabled:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <ToggleButton init={this.props.appState[App_Props.TOGGLE_BUTTON_3]} palette={Button_Props.palette.ORDINARY} disabled={true} onChange={this.onChange[App_Props.TOGGLE_BUTTON_3]}>Ordinary</ToggleButton>
                         <ToggleButton init={this.props.appState[App_Props.TOGGLE_BUTTON_4]} palette={Button_Props.palette.BRANDED} disabled={true} onChange={this.onChange[App_Props.TOGGLE_BUTTON_4]}>Branded</ToggleButton>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Conjoined:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <ConjoinedButtons>
                             {[1,2,3,4].map(function (e) {
@@ -81,12 +84,12 @@ export default class ToggleButtonExample extends React.Component {
                         </ConjoinedButtons>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Toggle group:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <ConjoinedButtons>
                             {[1,2,3,4].map(function (e) {
@@ -100,7 +103,7 @@ export default class ToggleButtonExample extends React.Component {
                         </ConjoinedButtons>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         {[1,2,3,4].map(function (e) {
                             return <ToggleRadioButton activeItemValue={me.props.appState[App_Props.TOGGLE_RADIO_GROUP_2]}
@@ -112,10 +115,10 @@ export default class ToggleButtonExample extends React.Component {
                         })}
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
-                        <HorizontalLayout stretch={false} height="5rem">
+                    <VerticalLayoutRow padding="5px">
+                        <HorizontalLayout height="5rem">
                             {[1,2,3,4].map(function (e) {
-                                return <HorizontalLayoutColumn key={e} height="100%" width="25%">
+                                return <HorizontalLayoutColumn key={e} width="25%">
 
                                     <ToggleRadioButton activeItemValue={me.props.appState[App_Props.TOGGLE_RADIO_GROUP_3]}
                                                        onChange={me.onChange[App_Props.TOGGLE_RADIO_GROUP_3]}
@@ -132,10 +135,10 @@ export default class ToggleButtonExample extends React.Component {
                         </HorizontalLayout>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
                         <HorizontalLayout>
                             {[1,2,3,4].map(function (e) {
-                                return <HorizontalLayoutColumn key={e} stretch={true} width="25%">
+                                return <HorizontalLayoutColumn key={e} width="25%">
 
                                     <ToggleRadioButton activeItemValue={me.props.appState[App_Props.TOGGLE_RADIO_GROUP_4]}
                                                        onChange={me.onChange[App_Props.TOGGLE_RADIO_GROUP_4]}
@@ -152,7 +155,7 @@ export default class ToggleButtonExample extends React.Component {
                         </HorizontalLayout>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )

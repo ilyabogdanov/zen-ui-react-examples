@@ -15,7 +15,7 @@ import {
 export default class Nav extends React.Component {
     render() {
         return (
-            <ScrollArea stretch scroll style={{background: "white"}}>
+            <ScrollArea style={{background: "white"}}>
                 <Tree stretch={false}>
                     <TreeBranch>
                         <TreeBranchlet open={true}>
@@ -39,7 +39,7 @@ export default class Nav extends React.Component {
                                         <TreeBranchlet key={i}>
                                             <TreeLeaf>
                                                 <TreeLeafColumn width={1}>
-                                                    <Text><Link to={e.to}>{e.name}</Link></Text>
+                                                    <Text clipped><Link to={e.to}>{e.name}</Link></Text>
                                                 </TreeLeafColumn>
                                             </TreeLeaf>
                                         </TreeBranchlet>
@@ -68,7 +68,7 @@ export default class Nav extends React.Component {
                                                         <TreeBranchlet key={i}>
                                                             <TreeLeaf>
                                                                 <TreeLeafColumn width={1}>
-                                                                    <Text><Link to={e.to}>{e.name}</Link></Text>
+                                                                    <Text clipped><Link to={e.to}>{e.name}</Link></Text>
                                                                 </TreeLeafColumn>
                                                             </TreeLeaf>
                                                         </TreeBranchlet>

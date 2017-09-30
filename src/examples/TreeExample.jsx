@@ -22,7 +22,7 @@ export default class TreeExample extends React.Component {
             array.push(x++);
         }
         return (
-            <ScrollArea stretch scroll style={{background: "white"}}>
+            <ScrollArea style={{background: "white"}}>
                 <Tree stretch={false}>
                     <TreeBranch>
                         <TreeBranchlet open={true}>

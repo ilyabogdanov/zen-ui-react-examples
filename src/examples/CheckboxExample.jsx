@@ -9,10 +9,13 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class CheckboxExample extends React.Component {
     constructor(props) {
+        // noinspection JSCheckFunctionSignatures
         super(props);
         this._onExampleChange = {};
         this._onExampleChange[App_Props.CHECKBOX_1] = this._onChange.bind(this, App_Props.CHECKBOX_1);
@@ -27,9 +30,9 @@ export default class CheckboxExample extends React.Component {
     }
     render() {
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px">
 
                         <Checkbox onChange={this._onExampleChange[App_Props.CHECKBOX_1]}
                                   checked={this.props.appState[App_Props.CHECKBOX_1]}
@@ -54,7 +57,7 @@ export default class CheckboxExample extends React.Component {
                         </Checkbox>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <Checkbox onChange={this._onExampleChange[App_Props.CHECKBOX_4]}
                                   checked={this.props.appState[App_Props.CHECKBOX_4]}
@@ -79,7 +82,7 @@ export default class CheckboxExample extends React.Component {
                         </Checkbox>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )

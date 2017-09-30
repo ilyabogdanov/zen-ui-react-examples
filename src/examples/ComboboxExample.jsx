@@ -10,10 +10,13 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class ComboboxExample extends React.Component {
     constructor(props) {
+        // noinspection JSCheckFunctionSignatures
         super(props);
         this.items = [{
             id: null,
@@ -38,14 +41,14 @@ export default class ComboboxExample extends React.Component {
     }
     render() {
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Stretch:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} height="5rem" padding="5px">
+                    <VerticalLayoutRow height="5rem" padding="5px">
 
                         <Combobox palette={Button_Props.palette.ORDINARY}
                                   onChange={this._onChange[App_Props.COMBOBOX_1]}
@@ -56,12 +59,12 @@ export default class ComboboxExample extends React.Component {
                                   activeItemValue={this.props.appState[App_Props.COMBOBOX_1]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Normal:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <Combobox palette={Button_Props.palette.ORDINARY}
                                   onChange={this._onChange[App_Props.COMBOBOX_2]}
@@ -72,12 +75,12 @@ export default class ComboboxExample extends React.Component {
                                   activeItemValue={this.props.appState[App_Props.COMBOBOX_2]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Disabled:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <Combobox palette={Button_Props.palette.ORDINARY}
                                   onChange={this._onChange[App_Props.COMBOBOX_3]}
@@ -89,8 +92,8 @@ export default class ComboboxExample extends React.Component {
                                   activeItemValue={this.props.appState[App_Props.COMBOBOX_3]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} height="5rem"/>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="5rem"/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )

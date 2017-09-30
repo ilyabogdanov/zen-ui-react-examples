@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * @class
+ * @prop {object} props
+ * @prop {string} props.group
+ * @prop {string} props.glyph
+ */
 export default class TaskTrackerIcon extends React.Component {
     render() {
         const { group, glyph } = this.props;

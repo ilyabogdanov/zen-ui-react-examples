@@ -1,8 +1,6 @@
 import React from "react";
 import TaskTrackerIcon, { Task_Tracker_Icon_Groups, Task_Tracker_Icon_Glyphs } from "../icons/TaskTrackerIcon";
 import {
-    Combobox,
-    ToggleButton,
     ToggleRadioButton,
     ConjoinedButtons,
     VerticalLayoutRow,
@@ -12,14 +10,8 @@ import {
     WindowHead,
     Window_Props,
     WindowBody,
-    HorizontalLayout,
-    HorizontalLayoutColumn,
-    PushButton,
     Button_Props,
-    Checkbox_Props,
-    Checkbox,
     Text,
-    TextField,
     Tree,
     TreeBranch,
     TreeBranchlet,
@@ -32,6 +24,7 @@ import {
  */
 export default class UiExample3 extends React.Component {
     constructor(props) {
+        // noinspection JSCheckFunctionSignatures
         super(props);
         this.state = {
             activeToggle: "My tasks"
@@ -45,7 +38,7 @@ export default class UiExample3 extends React.Component {
         const me = this;
         return (
             <Modal>
-                <Window stretch={false} palette={Window_Props.palette.ORDINARY} maxWidth="380px">
+                <Window stretch={false} palette={Window_Props.palette.ORDINARY} maxWidth="24rem">
                     <WindowHead title="Tasks"></WindowHead>
                     <WindowBody>
                         <VerticalLayout>
@@ -62,7 +55,7 @@ export default class UiExample3 extends React.Component {
                                 </ConjoinedButtons>
                             </VerticalLayoutRow>
                             <VerticalLayoutRow padding="0 0 4px 0">
-                                <Tree stretch={false} columnSeparator={false}>
+                                <Tree stretch={false} divider={false}>
                                     <TreeBranch>
                                         <TreeBranchlet open={true}>
                                             <TreeLeaf>

@@ -57,20 +57,20 @@ export default class UiExample2 extends React.Component {
     render() {
         return (
             <Modal>
-                <Window stretch={false} palette={Window_Props.palette.ORDINARY} maxWidth="380px">
+                <Window stretch={false} palette={Window_Props.palette.ORDINARY} minWidth="18.5rem" maxWidth="24rem">
                     <WindowHead title="Financial transactions"></WindowHead>
                     <WindowBody>
                         <VerticalLayout>
                             <VerticalLayoutRow padding="2px">
-                                <HorizontalLayout height="30px">
+                                <HorizontalLayout height="1.8rem">
                                     <HorizontalLayoutColumn width="100%"/>
-                                    <HorizontalLayoutColumn width="100px">
+                                    <HorizontalLayoutColumn width="5.6rem">
                                         <PushButton stretch palette={Button_Props.palette.ORDINARY} onClick={function(){}}>Sync</PushButton>
                                     </HorizontalLayoutColumn>
                                 </HorizontalLayout>
                             </VerticalLayoutRow>
                             <VerticalLayoutRow padding="0 0 4px 0">
-                                <Tree stretch={false} columnSeparator={true}>
+                                <Tree stretch={false} divider={true}>
                                     <TreeBranch>
                                         {data.map((e,i) => (
                                             <TreeBranchlet key={i} open={true}>
@@ -78,7 +78,7 @@ export default class UiExample2 extends React.Component {
                                                     <TreeLeafColumn width="100%">
                                                         <Text x="left" y="middle">{e.year}</Text>
                                                     </TreeLeafColumn>
-                                                    <TreeLeafColumn width="100px"/>
+                                                    <TreeLeafColumn width="5.6rem"/>
                                                 </TreeLeaf>
                                                 <TreeBranch>
                                                     {e.months.map((e,i) => (
@@ -87,23 +87,23 @@ export default class UiExample2 extends React.Component {
                                                                 <TreeLeafColumn width="100%">
                                                                     <Text x="left" y="middle">{e.month}</Text>
                                                                 </TreeLeafColumn>
-                                                                <TreeLeafColumn width="100px"/>
+                                                                <TreeLeafColumn width="5.6rem"/>
                                                             </TreeLeaf>
                                                             <TreeBranch>
                                                                 {e.contracts.map((e,i) => (
                                                                     <TreeBranchlet key={i} open={true}>
                                                                         <TreeLeaf>
-                                                                            <TreeLeafColumn width="2.1rem">
+                                                                            <TreeLeafColumn padding="0 5px" width={1}>
                                                                                 <Checkbox onChange={function () {}}
                                                                                           checked={e.active}
                                                                                           disabled={false}
                                                                                           readonly={false}
-                                                                                          alignment={Checkbox_Props.alignment.LEFT}/>
+                                                                                          alignment={Checkbox_Props.alignment.LEFT}>
+
+                                                                                    <Text clipped={true} style={e.active ? null : {opacity: "0.2"}}>{e.date}</Text>
+                                                                                </Checkbox>
                                                                             </TreeLeafColumn>
-                                                                            <TreeLeafColumn padding="0 5px" width={1}>
-                                                                                <Text clipped={true} style={e.active ? null : {opacity: "0.2"}}>{e.date}</Text>
-                                                                            </TreeLeafColumn>
-                                                                            <TreeLeafColumn width="90px" padding="0 10px 0 5px">
+                                                                            <TreeLeafColumn width="5.6rem" padding="0 10px 0 5px">
                                                                                 <Text style={e.active ? null : {opacity: "0.2"}} x="right">{e.sum}</Text>
                                                                             </TreeLeafColumn>
                                                                         </TreeLeaf>

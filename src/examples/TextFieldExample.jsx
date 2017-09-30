@@ -10,7 +10,9 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class TextFieldExample extends React.Component {
     constructor() {
@@ -26,14 +28,14 @@ export default class TextFieldExample extends React.Component {
     render() {
         const me = this;
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Normal:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <TextField value={me.props.appState[App_Props.TEXT_FIELD_1]}
                                    disabled={false}
@@ -43,12 +45,12 @@ export default class TextFieldExample extends React.Component {
                                    onChange={me._onExampleChange[App_Props.TEXT_FIELD_1]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Password:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <PasswordField value={null}
                                        disabled={false}
@@ -60,12 +62,12 @@ export default class TextFieldExample extends React.Component {
                                        }}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Stretch:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} height="5rem" padding="5px">
+                    <VerticalLayoutRow height="5rem" padding="5px">
 
                         <TextField value={me.props.appState[App_Props.TEXT_FIELD_2]}
                                    disabled={false}
@@ -75,12 +77,12 @@ export default class TextFieldExample extends React.Component {
                                    onChange={me._onExampleChange[App_Props.TEXT_FIELD_2]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Disabled:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <TextField value={me.props.appState[App_Props.TEXT_FIELD_3]}
                                    disabled={true}
@@ -89,7 +91,7 @@ export default class TextFieldExample extends React.Component {
                                    placeholder="This one is disabled"/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )

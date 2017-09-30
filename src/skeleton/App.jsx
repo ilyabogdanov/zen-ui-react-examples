@@ -53,7 +53,10 @@ export default class App extends React.Component {
     }
     handleChangeState(componentName,key,value) {
         var me = this;
+
         console.log(componentName, " >> ",key, " >> ", value);
+
+        // noinspection JSUnresolvedVariable
         if (componentName!==PushButtonExample.name &&
             componentName!==WindowExample.name &&
             componentName!==ModalExample.name) {

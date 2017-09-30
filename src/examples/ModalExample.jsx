@@ -1,7 +1,6 @@
 import React from "react";
 import {
     Zen,
-    Modal,
     Text,
     Window,
     WindowBody,
@@ -12,7 +11,8 @@ import {
 
 /**
  * @class
- * @prop {*} props.appCallback
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class ModalExample extends React.Component {
     constructor() {

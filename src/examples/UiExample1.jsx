@@ -3,16 +3,12 @@ import {
     Modal,
     Window,
     WindowHead,
-    Window_Props,
     WindowBody,
-    HorizontalLayout,
-    HorizontalLayoutColumn,
     VerticalLayout,
     VerticalLayoutRow,
     TextField,
     PasswordField,
     PushButton,
-    Button_Props,
     Text
 } from "zen-ui-react";
 

@@ -9,7 +9,7 @@ import {
 export default class TextExample extends React.Component {
     render() {
         return (
-            <Zen.ScrollArea stretch scroll>
+            <Zen.ScrollArea>
                 <Zen.Text padding="10px">
                     <h1>Heading 1</h1>
                     <h2>heading 2</h2>

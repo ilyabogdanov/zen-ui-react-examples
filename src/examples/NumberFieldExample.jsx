@@ -9,7 +9,9 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class TextFieldExample extends React.Component {
     constructor() {
@@ -24,14 +26,14 @@ export default class TextFieldExample extends React.Component {
     render() {
         const me = this;
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Normal</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <NumberField stretch={false}
                                      error={me.props.appState[App_Props.NUMBER_FIELD_1] && me.props.appState[App_Props.NUMBER_FIELD_1] > 999}
@@ -42,12 +44,12 @@ export default class TextFieldExample extends React.Component {
                                      value={me.props.appState[App_Props.NUMBER_FIELD_1]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Stretch</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} height="5rem" padding="5px">
+                    <VerticalLayoutRow height="5rem" padding="5px">
 
                         <NumberField stretch={true}
                                      error={me.props.appState[App_Props.NUMBER_FIELD_2] && me.props.appState[App_Props.NUMBER_FIELD_2] > 999}
@@ -58,12 +60,12 @@ export default class TextFieldExample extends React.Component {
                                      value={me.props.appState[App_Props.NUMBER_FIELD_2]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Disabled, without suffix, without placeholder</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <NumberField stretch={false}
                                      error={false}
@@ -73,7 +75,7 @@ export default class TextFieldExample extends React.Component {
                                      value={null}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )

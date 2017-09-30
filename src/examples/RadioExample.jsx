@@ -10,7 +10,9 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class RadioExample extends React.Component {
     constructor() {
@@ -25,14 +27,14 @@ export default class RadioExample extends React.Component {
     }
     render() {
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Arrays:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
                         {[1,2].map((e,i) =>
                             <Radio onChange={this._onExampleChange[App_Props.RADIO_1]}
                                    activeItemValue={this.props.appState[App_Props.RADIO_1]}
@@ -63,7 +65,7 @@ export default class RadioExample extends React.Component {
                         )}
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
                         {[1,2].map((e,i) =>
                             <Radio onChange={this._onExampleChange[App_Props.RADIO_2]}
                                    activeItemValue={this.props.appState[App_Props.RADIO_2]}
@@ -94,12 +96,12 @@ export default class RadioExample extends React.Component {
                         )}
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Objects:</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <Radio onChange={this._onExampleChange[App_Props.RADIO_3]}
                                activeItemValue={this.props.appState[App_Props.RADIO_3]}
@@ -118,7 +120,7 @@ export default class RadioExample extends React.Component {
                             Normal
                         </Radio>
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )

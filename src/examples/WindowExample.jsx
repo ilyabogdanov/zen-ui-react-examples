@@ -11,7 +11,8 @@ import {
 
 /**
  * @class
- * @prop {*} props.appCallback
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class WindowExample extends React.Component {
     constructor() {
@@ -23,7 +24,7 @@ export default class WindowExample extends React.Component {
     }
     render() {
         return (
-            <ScrollArea stretch scroll>
+            <ScrollArea>
 
                 <Window stretch={false} palette={Window_Props.palette.BRANDED}>
                     <WindowHead title="Branded window (non-stretch)">

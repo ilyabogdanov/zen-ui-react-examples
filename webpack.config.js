@@ -31,11 +31,11 @@ module.exports = {
             loader: "file-loader"
         }, {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
-            loader: 'file-loader?name=fonts/[name].[ext]'
+            loader: "file-loader?name=fonts/[name].[ext]"
         }]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: [".js", ".jsx"]
     },
     output: {
         filename: "index.js",

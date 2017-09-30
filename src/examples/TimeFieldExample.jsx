@@ -9,7 +9,9 @@ import {
 } from "zen-ui-react";
 
 /**
- * @prop {*} props.appCallback
+ * @class
+ * @prop {object} props
+ * @prop {function} props.appCallback
  */
 export default class TimeFieldExample extends React.Component {
     constructor() {
@@ -24,14 +26,14 @@ export default class TimeFieldExample extends React.Component {
     render() {
         const me = this;
         return (
-            <ScrollArea stretch scroll>
-                <VerticalLayout stretch={true}>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+            <ScrollArea>
+                <VerticalLayout>
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Normal</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <TimeField stretch={false}
                                    error={me.props.appState[App_Props.TIME_FIELD_1].getHours()>12}
@@ -40,12 +42,12 @@ export default class TimeFieldExample extends React.Component {
                                    onChange={me._onExampleChange[App_Props.TIME_FIELD_1]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Stretch</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} height="5rem" padding="5px">
+                    <VerticalLayoutRow height="5rem" padding="5px">
 
                         <TimeField stretch={true}
                                    error={me.props.appState[App_Props.TIME_FIELD_2].getHours()>12}
@@ -54,12 +56,12 @@ export default class TimeFieldExample extends React.Component {
                                    onChange={me._onExampleChange[App_Props.TIME_FIELD_2]}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px 5px 0 5px">
+                    <VerticalLayoutRow padding="5px 5px 0 5px">
 
                         <Text>Disabled</Text>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={false} padding="5px">
+                    <VerticalLayoutRow padding="5px">
 
                         <TimeField stretch={false}
                                    error={false}
@@ -67,7 +69,7 @@ export default class TimeFieldExample extends React.Component {
                                    value={null}/>
 
                     </VerticalLayoutRow>
-                    <VerticalLayoutRow stretch={true}/>
+                    <VerticalLayoutRow height="100%"/>
                 </VerticalLayout>
             </ScrollArea>
         )
